@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
-     "prd": "cross-env NODE_ENV=production nodemon ./bin/www.js"
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prd": "cross-env NODE_ENV=production nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
   "dependencies": {},
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.19",
+    "querystringify": "^2.2.0"
   }
 }
