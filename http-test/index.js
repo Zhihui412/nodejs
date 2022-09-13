@@ -1,12 +1,12 @@
 const http = require('http');
 const { chunk } = require('lodash');
-const querystring = require('querystring')
+const querystringify = require('querystringify')
 
 const server = http.createServer((req, res)  => {
     const method = req.method
     const url = req.url
     const path = url.split('?')[0]
-    const query = querystring.parse(url.split('?')[1])
+    const query = querystringify.parse(url.split('?')[1])
 
     // 设置返回格式为JSON
     res.setHeader('Content-type', 'application/json')
