@@ -32,13 +32,6 @@ getFileContent('a.json')
 })
 
 
-
-
-
-
-
-
-
 // function getFileName(fileName, callback){
 //     const fullFileName = path.resolve(__dirname, 'files', fileName)
 //     fs.readFile(fullFileName, (err, data) => {
