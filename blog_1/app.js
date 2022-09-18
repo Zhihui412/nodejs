@@ -53,6 +53,24 @@ const serverHandle = (req, res) => {
     // 解析 query
     req.query = querystringify.parse(url.split('?')[1])
 
+    // 解析 cookie
+    req.cookie = {} // 先定义一个cookie对象，将字符串的形式变成对象形式
+    const cookieStr = req.headers.cookie || ''
+    // 将字符串转换为数组
+    cookieStr.split(';').forEach( item => {
+        if (!item){
+            return
+        }
+        // 再对每一项进行拆分
+        const arr = item.split('=')
+        const key = arr[0]
+        const val = arr[1]
+        // 用req.cookie接收
+        req.cookie[key] = val
+    })
+
+    
+
     // 在处理路由之前，解析完post data
     getPostData(req).then(postData => {
         // 把处理完的数据放在req.body，方便使用
