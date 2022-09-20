@@ -18,8 +18,21 @@ const handleBlogRouter = (req, res) => {
     // 获取博客列表
     if (method === 'GET' && req.path === '/api/blog/list') {
         // 使用之前在app.js中获取的req.query
-        const author = req.query.author || ''
+        let author = req.query.author || ''
         const keyword = req.query.keyword || ''
+
+        if (req.query.isadmin) {
+            // 管理员界面
+            const loginCheckResult = loginCheck(req)
+            if (loginCheckResult) {
+                // 未登录
+                return loginCheckResult
+            }
+            // 强制查询自己的博客
+            author = req.session.username
+        }
+
+
 
         // result接收返回来的promise对象
         const result = getList(author, keyword)
@@ -56,7 +69,7 @@ const handleBlogRouter = (req, res) => {
         const loginCheckResult = loginCheck(req)
         if (loginCheckResult) {
             // 未登录
-            return loginCheck
+            return loginCheckResult
         }
 
         // 返回封装数据
@@ -76,7 +89,7 @@ const handleBlogRouter = (req, res) => {
         const loginCheckResult = loginCheck(req)
         if (loginCheckResult) {
             // 未登录
-            return loginCheck
+            return loginCheckResult
         }
 
         const result = updateBlog(id, req.body)
@@ -98,7 +111,7 @@ const handleBlogRouter = (req, res) => {
         const loginCheckResult = loginCheck(req)
         if (loginCheckResult) {
             // 未登录
-            return loginCheck
+            return loginCheckResult
         }
 
         const author = req.session.username
