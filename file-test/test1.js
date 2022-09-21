@@ -1,17 +1,19 @@
-const fs = require('fs')
-const path = require('path')
-
-const fileName = path.resolve(__dirname, 'data.txt')
+// const fs = require('fs')
+// const path = require('path')
+// const fileName = path.resolve(__dirname, 'data.txt')
 
 
 // 读取文件
-// fs.readFile(fileName, (err, data) => {
+// fs.readFile(file Name, (err, data) => {
 //     if (err){
 //         console.error('读取错误');
 //         return
 //     }
 //     console.log(data.toString());
     
+
+
+
 // })
 
 // 写入内容
