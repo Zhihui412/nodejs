@@ -3,4 +3,5 @@
 /mysql-test/node_modules
 /redis-test/node_modules
 /blog-express/node_modules
+/express-test/node_modules
 
