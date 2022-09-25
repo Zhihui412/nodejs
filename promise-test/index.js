@@ -31,6 +31,16 @@ getFileContent('a.json')
     console.log('c data', cData);
 })
 
+// async await
+async function readFileData() {
+    const aData = await getFileContent('a.json')
+    console.log(aData);
+    const bData = await getFileContent(aData.next)
+    console.log(bData);
+    const cData = await getFileContent(bData.next)
+    console.log(cData);
+}
+
 
 // function getFileName(fileName, callback){
 //     const fullFileName = path.resolve(__dirname, 'files', fileName)

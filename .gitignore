@@ -1,7 +1,2 @@
-/http-test/node_modules
-/blog_1/node_modules
-/mysql-test/node_modules
-/redis-test/node_modules
-/blog-express/node_modules
-/express-test/node_modules
+*/node_modules
 
